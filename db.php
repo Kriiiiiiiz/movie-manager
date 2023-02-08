@@ -7,6 +7,6 @@ session_start();
     'root',
     '',
     'movie-manager'
-  ) or die(mysqli_erro($mysqli));
+  ) or die(mysqli_error($mysqli));
 
 ?>

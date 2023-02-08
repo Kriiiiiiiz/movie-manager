@@ -20,7 +20,7 @@
       <div class="card card-body">
             <form action="save_film.php" method="POST">
             <div class="form-group">
-                <input type="text" name="nam" class="form-control" placeholder="Film Title" autofocus>
+                <input type="text" name="name" class="form-control" placeholder="Film Title" autofocus>
             </div>
             <div class="form-group">
             <label for="start">Time Duration:</label>

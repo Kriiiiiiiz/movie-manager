@@ -12,5 +12,5 @@ if (isset($_GET['update'])) {
     mysqli_query($con, $query);
     $_SESSION['message'] = 'Task Updated Successfully';
     $_SESSION['message_type'] = 'warning';
-    header('Location: index.php');
+    header('Location: admin.php');
     }

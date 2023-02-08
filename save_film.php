@@ -17,7 +17,7 @@ if (isset($_POST['save_film'])) {
 
   $_SESSION['message'] = 'Task Saved Successfully';
   $_SESSION['message_type'] = 'success';
-  header('Location: index.php');
+  header('Location: admin.php');
 
 }
 
