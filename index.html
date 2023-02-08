@@ -14,11 +14,21 @@
       <h2> WELCOME TO FREE MOVIES</h2>
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <button class="button button5">LOG IN</button>
+          <button id="login-btn" class="button button5">LOG IN</button>
+          <script type="text/javascript">
+            document.getElementById("login-btn").onclick = function () {
+                location.href = "login.php";
+            };
+          </script>
         </li>
         <h4>Don't have an account yet? Please sign up</h4>
         <li class="nav-item">
-          <button class="button button5">SIGN IN</button>
+          <button id="register-btn" class="button button5">SIGN IN</button>
+          <script type="text/javascript">
+            document.getElementById("register-btn").onclick = function () {
+                location.href = "register.php";
+            };
+          </script>
         </li>
       </ul>
     </header>
