@@ -16,9 +16,9 @@
       </div>
       <?php session_unset(); } ?>
 
-      <!-- ADD TASK FORM -->
+      <!-- ADD FILM FORM -->
       <div class="card card-body">
-            <form action="save_task.php" method="POST">
+            <form action="save_film.php" method="POST">
             <div class="form-group">
                 <input type="text" name="nam" class="form-control" placeholder="Film Title" autofocus>
             </div>
@@ -37,7 +37,7 @@
             <div class="form-group">
                 <input type="text" name="category" class="form-control" placeholder="Category" autofocus>
             </div>
-            <input type="submit" name="save_task" class="btn btn-success btn-block" value="Save">
+            <input type="submit" name="save_film" class="btn btn-success btn-block" value="Save">
             </form>
         </div>
     </div>
@@ -69,7 +69,7 @@
               <a href="edit.php?id=<?php echo $row['id_films'];?>&name=<?php echo $row['name'];?>&time_duration=<?php echo $row['time_duration'];?>&expire_date=<?php echo $row['expire_date'];?>&release_date=<?php echo $row['release_date'];?>&category=<?php echo $row['category'];?>" class="btn btn-secondary">
                 <i class="fas fa-marker"></i>
               </a>
-              <a href="delete_task.php?id=<?php echo $row['id_films'];?>" class="btn btn-danger">
+              <a href="delete_film.php?id=<?php echo $row['id_films'];?>" class="btn btn-danger">
                 <i class="far fa-trash-alt"></i>
               </a>
             </td>

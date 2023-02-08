@@ -2,7 +2,7 @@
 
 include('db.php');
 
-if (isset($_POST['save_task'])) {
+if (isset($_POST['save_film'])) {
   $name = $_POST['name'];
   $time_duration = $_POST['time_duration'];
   $expire_date = $_POST['expire_date'];
