@@ -1,0 +1,13 @@
+{
+  "folders": [
+	{
+		"name": "movie-manager",
+		"path": "."
+	},
+	{
+		"name": "src",
+		"path": "../dev/src"
+	}
+],
+  "settings": {}
+}

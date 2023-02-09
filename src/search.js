@@ -5,12 +5,17 @@ function search(query) {
   fetch("https://imdb-api.com/en/API/SearchMovie/k_w6sfh0om/" + query)
     .then((response) => response.json())
     .then((data) => {
+      console.log(data);
       createResults(data);
     });
 
   function createResults(data) {
+    const tableMovie = document.querySelector("#tableMovie");
+
+    while (tableMovie.firstChild) {
+      tableMovie.removeChild(tableMovie.lastChild);
+    }
     data.results.forEach((item) => {
-      const tableMovie = document.querySelector("#tableMovie");
       const trTableMovie = document.createElement("tr");
 
       const tdMovieId = document.createElement("td");
@@ -18,13 +23,19 @@ function search(query) {
       const tdMovieTitle = document.createElement("td");
       tdMovieTitle.textContent = item.title;
       const tdMovieTrailer = document.createElement("td");
-      tdMovieTrailer.textContent = "";
+      const image = document.createElement("img");
+      image.src = item.image;
+
+      const a = document.createElement("a");
+      a.href = "./trailerviewer.php?id=" + item.id;
+      a.textContent = "viewtrailer";
 
       tableMovie.appendChild(trTableMovie);
       trTableMovie.appendChild(tdMovieId);
       trTableMovie.appendChild(tdMovieTitle);
       trTableMovie.appendChild(tdMovieTrailer);
-      console.log(item.title);
+      tdMovieTrailer.appendChild(a);
+      trTableMovie.appendChild(image);
     });
   }
 }
