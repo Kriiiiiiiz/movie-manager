@@ -3,7 +3,6 @@
 <?php include('includes/header.php'); ?>
 
 <?php
-session_start();
 
 // Comrpobar logueo
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
@@ -11,6 +10,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     exit;
 }
 ?>
+
+    <p>Hola !</p>
+    <a href="logout.php" class="btn btn-danger ml-3">Log Out</a>
 
 <main class="container p-4">
   <div class="row">
