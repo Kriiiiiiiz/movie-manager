@@ -2,6 +2,16 @@
 
 <?php include('includes/header.php'); ?>
 
+<?php
+session_start();
+
+// Comrpobar logueo
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    header("location: login.php");
+    exit;
+}
+?>
+
 <main class="container p-4">
   <div class="row">
     <div class="col-md-4">
