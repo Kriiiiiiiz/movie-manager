@@ -13,66 +13,56 @@ $username_err = $password_err = $login_err = "";
 
 // Form
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
     // Comprobar si el usuatio esta vacio
     if (empty(trim($_POST["username"]))) {
         $username_err = "Please enter username.";
     } else {
         $username = trim($_POST["username"]);
     }
-
     // Comprobar si la contraseña esta vacia
     if (empty(trim($_POST["password"]))) {
         $password_err = "Please enter your password.";
     } else {
         $password = trim($_POST["password"]);
     }
-
     // Validar
     if (empty($username_err) && empty($password_err)) {
         // SELECT
-        $sql = "SELECT id, username, password FROM users WHERE username = ?";
-
+        $sql = "SELECT id, username, role, password FROM users WHERE username = ?";
         if ($stmt = $mysqli->prepare($sql)) {
             $stmt->bind_param("s", $param_username);
-
             $param_username = $username;
-
             if ($stmt->execute()) {
                 $stmt->store_result();
-
                 //Ver si el usuario existe
                 if ($stmt->num_rows == 1) {
-                    $stmt->bind_result($id, $username, $hashed_password);
+                    $stmt->bind_result($id, $username, $role, $hashed_password);
                     if ($stmt->fetch()) {
                         if (password_verify($password, $hashed_password)) {
                             // Si la contraseña es correcta, iniciar nueva sesión
                             session_start();
-
                             $_SESSION["loggedin"] = true;
                             $_SESSION["id"] = $id;
                             $_SESSION["username"] = $username;
-
+                            $_SESSION["role"] = $role;
                             // Reenvio
-                            header("location: inicio.php");
+                            header("location: movieplaner.php");
                         } else {
                             // Contraseña invalida
-                            $login_err = "Invalid username or password.";
+                            $login_err = "Invalid password.";
                         }
                     }
                 } else {
                     // Usuario no existe
-                    $login_err = "Invalid username or password.";
+                    $login_err = "Invalid username.";
                 }
             } else {
                 echo "Oops! Something went wrong. Please try again later.";
             }
-
             // Cierre statement
             $stmt->close();
         }
     }
-
     // Close connection
     $mysqli->close();
 }
