@@ -1,61 +1,58 @@
 * {
-  box-sizing: border-box;
-}
+    box-sizing: border-box;
+  }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url(https://www.plex.tv/wp-content/uploads/2021/04/plex-splash-screen-04-30-21-new-1800x1013.png);
+  }
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-image: url(https://www.plex.tv/wp-content/uploads/2021/04/plex-splash-screen-04-30-21-new-1800x1013.png);
-}
 
+  /* Style the header */
+  header {
+    background-color: #666;
+    padding: 30px;
+    text-align: center;
+    font-size: 35px;
+    color: white;
+    background-image: url(https://www.plex.tv/wp-content/uploads/2021/04/plex-splash-screen-04-30-21-new-1800x1013.png);
+  }
 
-/* Style the header */
-header {
-  background-color: #666;
-  padding: 30px;
-  text-align: center;
-  font-size: 35px;
-  color: white;
-  background-image: url(https://www.plex.tv/wp-content/uploads/2021/04/plex-splash-screen-04-30-21-new-1800x1013.png);
-}
+  /* Create two columns/boxes that floats next to each other */
+  nav {
+    float: left;
+    width: 30%;
+    height: 300px; /* only for demonstration, should be removed */
+    /* background: #ccc; */
+    padding: 20px;
+    background-image: url(https://www.plex.tv/wp-content/uploads/2021/04/plex-splash-screen-04-30-21-new-1800x1013.png);
+  }
 
-/* Create two columns/boxes that floats next to each other */
-nav {
-  float: left;
-  width: 30%;
-  height: 300px;
-  /* only for demonstration, should be removed */
-  /* background: #ccc; */
-  padding: 20px;
-  background-image: url(https://www.plex.tv/wp-content/uploads/2021/04/plex-splash-screen-04-30-21-new-1800x1013.png);
-}
+  /* Style the list inside the menu */
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+    background-image: url(https://www.plex.tv/wp-content/uploads/2021/04/plex-splash-screen-04-30-21-new-1800x1013.png);
+  }
 
-/* Style the list inside the menu */
-nav ul {
-  list-style-type: none;
-  padding: 0;
-  background-image: url(https://www.plex.tv/wp-content/uploads/2021/04/plex-splash-screen-04-30-21-new-1800x1013.png);
-}
+  article {
+    background-image: url(https://www.plex.tv/wp-content/uploads/2021/04/plex-splash-screen-04-30-21-new-1800x1013.png);
+    float: left;
+    padding: 20px;
+    width: 70%;
+    color: #f1f1f1;
+    height: 300px; /* only for demonstration, should be removed */
+  }
 
-article {
-  background-image: url(https://www.plex.tv/wp-content/uploads/2021/04/plex-splash-screen-04-30-21-new-1800x1013.png);
-  float: left;
-  padding: 20px;
-  width: 70%;
-  color: #f1f1f1;
-  height: 300px;
-  /* only for demonstration, should be removed */
-}
+  /* Clear floats after the columns */
+  section::after {
+    content: "";
+    display: table;
+    clear: both;
+   
+  }
 
-/* Clear floats after the columns */
-section::after {
-  content: "";
-  display: table;
-  clear: both;
-
-}
-
-/* Style the footer */
-/* footer {
+  /* Style the footer */
+  /* footer {
     background-color: #777;
     padding: 10px;
     text-align: center;
@@ -64,200 +61,172 @@ section::after {
 
   } */
 
+  
 
 
-
-/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
-@media (max-width: 600px) {
-
-  nav,
-  article {
-    width: 100%;
-    height: auto;
+  /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+  @media (max-width: 600px) {
+    nav,
+    article {
+      width: 100%;
+      height: auto;
+    }
   }
+  .button {
+border: none;
+color: white;
+padding: 16px 32px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+margin: 4px 2px;
+transition-duration: 0.4s;
+cursor: pointer;
 }
-
-.button {
-  border: none;
-  color: white;
-  padding: 16px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  transition-duration: 0.4s;
-  cursor: pointer;
-}
-
 .button5 {
-  background-color: white;
-  color: black;
-  border: 2px solid #555555;
+background-color: white;
+color: black;
+border: 2px solid #555555;
 }
 
 .button5:hover {
-  background-color: #5e0404;
-  color: white;
+background-color: #5e0404;
+color: white;
 }
-
 .carousel {
-  max-width: 800px;
-  background-size: contain;
-  margin: 0 auto;
-  display: flex;
-  background-image: url(https://www.plex.tv/wp-content/uploads/2021/04/plex-splash-screen-04-30-21-new-1800x1013.png);
+max-width: 800px;
+background-size: contain;
+margin: 0 auto;
+display: flex;
+background-image: url(https://www.plex.tv/wp-content/uploads/2021/04/plex-splash-screen-04-30-21-new-1800x1013.png);
 
 }
-
 #imagen {
-  width: 100%;
-  height: 400px;
-  background-size: cover;
+width: 100%;
+height: 400px;
+background-size: cover;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
 
 .footer {
-  position: relative;
-  width: 100%;
-  background: #3586ff;
-  min-height: 100px;
-  padding: 20px 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+position: relative;
+width: 100%;
+background: #3586ff;
+min-height: 100px;
+padding: 20px 50px;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
 
 }
 
 .social-icon,
 .menu {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 10px 0;
-  flex-wrap: wrap;
+position: relative;
+display: flex;
+justify-content: center;
+align-items: center;
+margin: 10px 0;
+flex-wrap: wrap;
 }
 
 .social-icon__item,
 .menu__item {
-  list-style: none;
+list-style: none;
 }
 
 .social-icon__link {
-  font-size: 2rem;
-  color: #fff;
-  margin: 0 10px;
-  display: inline-block;
-  transition: 0.5s;
+font-size: 2rem;
+color: #fff;
+margin: 0 10px;
+display: inline-block;
+transition: 0.5s;
 }
-
 .social-icon__link:hover {
-  transform: translateY(-10px);
+transform: translateY(-10px);
 }
 
 .menu__link {
-  font-size: 1.2rem;
-  color: #fff;
-  margin: 0 10px;
-  display: inline-block;
-  transition: 0.5s;
-  text-decoration: none;
-  opacity: 0.75;
-  font-weight: 300;
+font-size: 1.2rem;
+color: #fff;
+margin: 0 10px;
+display: inline-block;
+transition: 0.5s;
+text-decoration: none;
+opacity: 0.75;
+font-weight: 300;
 }
 
 .menu__link:hover {
-  opacity: 1;
+opacity: 1;
 }
 
 .footer p {
-  color: #fff;
-  margin: 15px 0 10px 0;
-  font-size: 1rem;
-  font-weight: 300;
+color: #fff;
+margin: 15px 0 10px 0;
+font-size: 1rem;
+font-weight: 300;
 }
 
 .wave {
-  position: absolute;
-  top: -100px;
-  left: 0;
-  width: 100%;
-  height: 100px;
-  background: url("https://i.ibb.co/wQZVxxk/wave.png");
-  background-size: 1000px 100px;
+position: absolute;
+top: -100px;
+left: 0;
+width: 100%;
+height: 100px;
+background: url("https://i.ibb.co/wQZVxxk/wave.png");
+background-size: 1000px 100px;
 }
 
 .wave#wave1 {
-  z-index: 1000;
-  opacity: 1;
-  bottom: 0;
-  animation: animateWaves 4s linear infinite;
+z-index: 1000;
+opacity: 1;
+bottom: 0;
+animation: animateWaves 4s linear infinite;
 }
 
 .wave#wave2 {
-  z-index: 999;
-  opacity: 0.5;
-  bottom: 10px;
-  animation: animate 4s linear infinite !important;
+z-index: 999;
+opacity: 0.5;
+bottom: 10px;
+animation: animate 4s linear infinite !important;
 }
 
 .wave#wave3 {
-  z-index: 1000;
-  opacity: 0.2;
-  bottom: 15px;
-  animation: animateWaves 3s linear infinite;
+z-index: 1000;
+opacity: 0.2;
+bottom: 15px;
+animation: animateWaves 3s linear infinite;
 }
 
 .wave#wave4 {
-  z-index: 999;
-  opacity: 0.7;
-  bottom: 20px;
-  animation: animate 3s linear infinite;
+z-index: 999;
+opacity: 0.7;
+bottom: 20px;
+animation: animate 3s linear infinite;
 }
 
 @keyframes animateWaves {
-  0% {
-    background-position-x: 1000px;
-  }
-
-  100% {
-    background-positon-x: 0px;
-  }
+0% {
+background-position-x: 1000px;
+}
+100% {
+background-positon-x: 0px;
+}
 }
 
 @keyframes animate {
-  0% {
-    background-position-x: -1000px;
-  }
-
-  100% {
-    background-positon-x: 0px;
-  }
+0% {
+background-position-x: -1000px;
+}
+100% {
+background-positon-x: 0px;
+}
 }
 
-
-/* register.php */
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: rgba(255, 255, 255, 0.644);
-  border-radius: 5px;
-  width: 30%;
-  padding: 20px;
-  margin-top: 5rem;
-
-}
-
-.form-group input{
-  background-color: rgba(100, 67, 67, 0.737);
+.move-left{
+  justify-content: flex-end;
 }
